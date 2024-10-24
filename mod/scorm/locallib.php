@@ -469,9 +469,9 @@ function scorm_insert_track($userid, $scormid, $scoid, $attemptornumber, $elemen
             }
         }
         if ($element == 'cmi.core.score.raw') {
-            $tracktest = scorm_get_sco_value($scoid, $userid, 'cmi.core.lesson_status', $attempt->attempt);
-            if (!empty($tracktest)) {
-                if ($tracktest->value == "incomplete") {
+            $track = scorm_get_sco_value($scoid, $userid, 'cmi.core.lesson_status', $attempt->attempt);
+            if (!empty($track)) {
+                if ($track->value == "incomplete") {
                     $v = new stdClass();
                     $v->id = $track->valueid;
                     $v->value = "completed";
